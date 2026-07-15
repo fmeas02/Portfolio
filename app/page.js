@@ -8,8 +8,8 @@ import Lenis from "lenis";
 const WEB3FORMS_ACCESS_KEY = "d2bfebaa-452e-4b84-9b05-af0f66ceaee4";
 
 const projects = [
-  { name: "Brasier", sector: "Restaurant gastronomique", color: "#a8462c", bg: "#14100d" },
-  { name: "Mèche", sector: "Salon de coiffure", color: "#6b3450", bg: "#efe9ea" },
+  { name: "Brasier", sector: "Restaurant gastronomique", color: "#a8462c", bg: "#14100d", url: "https://brasier-3h5o-delta.vercel.app/" },
+  { name: "Mèche", sector: "Salon de coiffure", color: "#6b3450", bg: "#efe9ea", url: "https://salondecoiffure-u22q.vercel.app/" },
 ];
 
 export default function Home() {
@@ -110,7 +110,6 @@ export default function Home() {
         <rect width="100%" height="100%" filter="url(#noise-webelite)" />
       </svg>
 
-      {/* NAV */}
       <nav ref={navRef} className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b" style={{ borderColor: "transparent" }}>
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
           <a href="#" className="disp text-lg" style={{ letterSpacing: "-0.02em" }}>WEB ÉLITE</a>
@@ -124,7 +123,6 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* HERO */}
       <section className="relative min-h-screen flex items-center pt-24">
         <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
           <div className="line-mask"><p className="label mb-6" data-reveal="">Studio web indépendant</p></div>
@@ -147,7 +145,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
       <section id="services" className="py-24 md:py-32" style={{ background: "var(--bg-2)" }}>
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <p className="label mb-5">Services</p>
@@ -169,14 +166,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROJETS */}
       <section id="projets" className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <p className="label mb-5">Projets récents</p>
           <h2 className="h2 text-4xl md:text-5xl mb-14 max-w-2xl">Deux secteurs, deux identités.</h2>
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl">
             {projects.map((p) => (
-              <div key={p.name} className="card overflow-hidden reveal-up">
+              <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="card overflow-hidden reveal-up block">
                 <div className="h-48 flex items-center justify-center" style={{ background: p.bg }}>
                   <p className="disp text-3xl uppercase" style={{ color: p.color }}>{p.name}</p>
                 </div>
@@ -184,13 +180,12 @@ export default function Home() {
                   <p className="label mb-2">{p.sector}</p>
                   <p className="text-sm" style={{ color: "var(--text-dim)" }}>Design, animations et prise de contact intégrée.</p>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* PROCESS */}
       <section id="process" className="py-24 md:py-32" style={{ background: "var(--bg-2)" }}>
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <p className="label mb-5">Méthode</p>
@@ -215,7 +210,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT */}
       <section id="contact" className="py-24 md:py-36 text-center">
         <div className="max-w-md mx-auto px-6 reveal-up">
           <p className="label mb-6">Contact</p>
