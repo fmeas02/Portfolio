@@ -10,8 +10,8 @@ const WEB3FORMS_ACCESS_KEY = "d2bfebaa-452e-4b84-9b05-af0f66ceaee4";
 const projects = [
   { name: "Brasier", sector: "Restaurant gastronomique", color: "#a8462c", bg: "#14100d", url: "https://brasier-3h5o-delta.vercel.app/" },
   { name: "Mèche", sector: "Salon de coiffure", color: "#6b3450", bg: "#efe9ea", url: "https://salondecoiffure-u22q.vercel.app/" },
-];
-
+  { name: "APEX Gym", sector: "Salle de sport premium", color: "#e10600", bg: "#0a0a0a", url: "https://salle-de-sport-git-main-web-elite.vercel.app/" },
+];  
 export default function Home() {
   const navRef = useRef(null);
   const [status, setStatus] = useState("idle");
@@ -169,8 +169,9 @@ export default function Home() {
       <section id="projets" className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <p className="label mb-5">Projets récents</p>
-          <h2 className="h2 text-4xl md:text-5xl mb-14 max-w-2xl">Deux secteurs, deux identités.</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl">
+      
+         <h2 className="h2 text-4xl md:text-5xl mb-14 max-w-2xl">Trois secteurs, trois identités.</h2>
+          <div className="grid md:grid-cols-3 gap-6">
             {projects.map((p) => (
               <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="card overflow-hidden reveal-up block">
                 <div className="h-48 flex items-center justify-center" style={{ background: p.bg }}>
